@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin Login — Marwari Connect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+      :root {
+        --primary: #6b3f69; /* Deep muted purple */
+        --secondary: #8d5f8c; /* Mauve */
+        --accent: #a376a2; /* Lavender */
+        --light: #ddc3c3; /* Soft rose */
+      }
+    </style>
+  </head>
+  <body
+    class="min-h-screen flex items-center justify-center bg-gradient-to-br from-[var(--primary)] via-[var(--secondary)] to-[var(--accent)]"
+  >
+    <div
+      class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-lg w-full max-w-md text-white"
+      data-aos="zoom-in"
+    >
+      <h1 class="text-3xl font-bold mb-6 text-center text-[var(--light)]">
+        Admin Login
+      </h1>
+
+      <!-- ✅ Linked to Flask admin-login route -->
+      <form
+        method="POST"
+        action="{{ url_for('admin_login') }}"
+        class="space-y-4"
+      >
+        <input
+          name="email"
+          type="email"
+          placeholder="Admin Email"
+          required
+          class="w-full px-4 py-3 rounded-lg bg-white/30 placeholder-gray-200 text-white focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
+        />
+        <input
+          name="password"
+          type="password"
+          placeholder="Password"
+          required
+          class="w-full px-4 py-3 rounded-lg bg-white/30 placeholder-gray-200 text-white focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
+        />
+
+        <button
+          type="submit"
+          class="w-full py-3 bg-[var(--primary)] hover:bg-[var(--secondary)] rounded-lg font-semibold transition"
+        >
+          Login
+        </button>
+      </form>
+
+      <p class="mt-4 text-center text-sm text-gray-200">
+        ⚠️ This page is restricted to
+        <span class="text-[var(--accent)] font-semibold"
+          >administrators only</span
+        >.
+      </p>
+    </div>
+
+    <script>
+      AOS.init({ duration: 800, once: true, easing: "ease-in-out" });
+    </script>
+  </body>
+</html>

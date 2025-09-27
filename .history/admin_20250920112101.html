@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Dashboard — Jaipur Jewells</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gradient-to-br from-purple-800 via-indigo-700 to-blue-700 text-white">
+
+  <div class="max-w-6xl mx-auto p-6">
+    <h1 class="text-3xl font-bold mb-6">Admin Dashboard</h1>
+    <div id="vendorsList" class="grid grid-cols-1 gap-4"></div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    let approvedIds = [];
+
+    function renderAdmin(){
+      const container = document.getElementById('vendorsList');
+      container.innerHTML = dummyVendors.map(v => `
+        <div class="bg-white/10 backdrop-blur-xl rounded-2xl p-5 flex justify-between items-center shadow-lg hover:shadow-pink-500/30 transition">
+          <div>
+            <div class="font-semibold text-lg">${v.business_name || v.name} <span class="text-xs text-gray-200">(${v.city})</span></div>
+            <div class="text-sm text-gray-300">${v.category}</div>
+          </div>
+          <div class="flex gap-3">
+            ${approvedIds.includes(v.id) 
+              ? '<span class="text-green-400 font-bold">Approved</span>' 
+              : `<button onclick="approve(${v.id})" class="px-3 py-2 bg-pink-500 hover:bg-pink-600 rounded-lg">Approve</button>`}
+            <button onclick="del(${v.id})" class="px-3 py-2 bg-red-500 hover:bg-red-600 rounded-lg">Delete</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function approve(id){
+      if(!approvedIds.includes(id)) approvedIds.push(id);
+      renderAdmin();
+    }
+
+    function del(id){
+      alert("Deleted vendor ID: " + id + " (frontend only)");
+    }
+
+    renderAdmin();
+  </script>
+</body>
+</html>

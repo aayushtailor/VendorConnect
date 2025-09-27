@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Register — Jaipur Jewells</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- ✅ Flask static CSS (optional if you add styles.css) -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-500 text-white">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-white/10 backdrop-blur-md shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="w-10 h-10 rounded-full">
+        <span class="font-bold text-lg text-white">Jaipur Jewells</span>
+      </div>
+      <div class="hidden md:flex items-center gap-6 text-white font-medium">
+        <a href="{{ url_for('home') }}" class="hover:text-pink-300">Home</a>
+        <a href="{{ url_for('render_page', page='about') }}" class="hover:text-pink-300">About</a>
+        <a href="{{ url_for('render_page', page='contact') }}" class="hover:text-pink-300">Contact</a>
+        <a href="{{ url_for('render_page', page='blog') }}" class="hover:text-pink-300">Blog</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Register Form -->
+  <section class="pt-32 pb-16 px-6 max-w-xl mx-auto">
+    <div data-aos="zoom-in" class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-lg">
+      <h1 class="text-3xl font-bold mb-6 text-center">Vendor Registration</h1>
+      
+      <!-- ✅ Form action linked to Flask -->
+      <form method="POST" action="{{ url_for('render_page', page='register') }}" class="space-y-4">
+        <input name="fullname" type="text" placeholder="Full Name" required 
+               class="w-full px-4 py-3 rounded-lg bg-white/30 text-white placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400 transition">
+        
+        <input name="business" type="text" placeholder="Business Name" required 
+               class="w-full px-4 py-3 rounded-lg bg-white/30 text-white placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400 transition">
+        
+        <input name="category" type="text" placeholder="Category (e.g., Jewellery, Tailor)" required 
+               class="w-full px-4 py-3 rounded-lg bg-white/30 text-white placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400 transition">
+        
+        <input name="city" type="text" placeholder="City" required 
+               class="w-full px-4 py-3 rounded-lg bg-white/30 text-white placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400 transition">
+        
+        <input name="phone" type="tel" placeholder="Phone Number" required 
+               class="w-full px-4 py-3 rounded-lg bg-white/30 text-white placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400 transition">
+        
+        <input name="email" type="email" placeholder="Email Address" required 
+               class="w-full px-4 py-3 rounded-lg bg-white/30 text-white placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400 transition">
+        
+        <input name="password" type="password" placeholder="Password" required 
+               class="w-full px-4 py-3 rounded-lg bg-white/30 text-white placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400 transition">
+        
+        <button type="submit" class="w-full py-3 bg-pink-500 hover:bg-pink-600 rounded-lg font-semibold">
+          Register
+        </button>
+      </form>
+
+      <p class="mt-6 text-center text-gray-200">
+        Already have an account? 
+        <a href="{{ url_for('render_page', page='login') }}" class="text-yellow-300 underline">Login</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-purple-700 to-indigo-700 text-center py-6">
+    <p class="text-sm">
+      &copy; 2025 Jaipur Jewells. All rights reserved. |
+      <a href="{{ url_for('render_page', page='terms') }}" class="underline hover:text-yellow-300">Terms & Conditions</a> |
+      <a href="{{ url_for('render_page', page='privacy') }}" class="underline hover:text-yellow-300">Privacy Policy</a>
+    </p>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration: 800, once: true, easing: 'ease-in-out' });</script>
+</body>
+</html>

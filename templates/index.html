@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Marwari Connect — Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar fixed top-0 left-0 w-full z-50 shadow-md">
+      <div
+        class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center gap-2">
+          <img
+            src="{{ url_for('static', filename='logo.png') }}"
+            alt="Logo"
+            class="w-10 h-10 rounded-full"
+          />
+          <span class="font-bold text-lg sitename">Marwari Connect</span>
+        </div>
+        <div class="hidden md:flex items-center gap-6 font-medium">
+          <a href="{{ url_for('home') }}" class="active">Home</a>
+          <a href="{{ url_for('vendors_list') }}">Vendors</a>
+          <a href="{{ url_for('about') }}">About</a>
+          <a href="{{ url_for('contact') }}">Contact</a>
+          <a href="{{ url_for('blog') }}">Blog</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="{{ url_for('login') }}" class="btn-login">Login</a>
+          <a href="{{ url_for('register') }}" class="btn-register">Register</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="page-header pt-32 pb-16 text-center px-6 max-w-3xl mx-auto">
+      <h1 data-aos="fade-up" class="text-4xl md:text-5xl font-extrabold mb-4">
+        Welcome to Marwari Connect
+      </h1>
+      <p data-aos="fade-up" data-aos-delay="200" class="text-lg">
+        A platform connecting Marwari businesses, entrepreneurs, and
+        communities.
+      </p>
+      <div
+        data-aos="fade-up"
+        data-aos-delay="400"
+        class="mt-6 flex justify-center gap-4"
+      >
+        <a href="{{ url_for('register') }}" class="btn-primary">Register Now</a>
+        <a href="{{ url_for('vendors_list') }}" class="btn-secondary"
+          >Browse Vendors</a
+        >
+      </div>
+    </section>
+
+    <!-- Features / Cards -->
+    <section class="py-16 px-6 max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
+      <div class="card" data-aos="fade-up">
+        <h3>📑 Directory</h3>
+        <p>Find and explore verified Marwari businesses across industries.</p>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="200">
+        <h3>🤝 Networking</h3>
+        <p>Connect with like-minded entrepreneurs and grow together.</p>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="400">
+        <h3>🚀 Growth</h3>
+        <p>Expand your reach and build trust in the Marwari community.</p>
+      </div>
+    </section>
+
+    <!-- Featured Vendors -->
+    <!-- Featured Vendors -->
+    <section class="py-16 px-6 max-w-6xl mx-auto">
+      <h2
+        class="text-2xl md:text-3xl font-bold text-center mb-10 text-[var(--primary)]"
+      >
+        ✨ Featured Vendors
+      </h2>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+        {% for v in vendors[:6] %}
+        <a
+          href="{{ url_for('vendor_profile', vendor_id=v[0]) }}"
+          class="bg-[var(--light)] rounded-xl shadow-md p-4 hover:shadow-[var(--accent)] transition block text-center border border-[var(--primary)]"
+        >
+          <img
+            src="{{ url_for('static', filename='uploads/' ~ v[7]) }}"
+            alt="{{ v[2] }}"
+            class="w-24 h-24 object-cover mx-auto rounded-full border-2 border-[var(--secondary)] mb-3"
+          />
+          <h3 class="font-bold text-lg text-[var(--primary)]">{{ v[2] }}</h3>
+          <p class="text-sm text-[var(--secondary)]">{{ v[3] }} • {{ v[4] }}</p>
+        </a>
+        {% endfor %}
+      </div>
+      <div class="mt-6 text-center">
+        <a
+          href="{{ url_for('vendors_list') }}"
+          class="px-6 py-2 rounded-lg bg-[var(--primary)] text-white hover:bg-[var(--secondary)]"
+        >
+          See All Vendors →
+        </a>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="py-16 px-6 bg-gray-100">
+      <div
+        class="max-w-5xl mx-auto grid sm:grid-cols-3 gap-6 text-center"
+        data-aos="fade-up"
+      >
+        <div>
+          <h3 class="text-3xl font-bold text-[var(--primary)]">500+</h3>
+          <p class="text-gray-600">Vendors Registered</p>
+        </div>
+        <div>
+          <h3 class="text-3xl font-bold text-[var(--primary)]">1200+</h3>
+          <p class="text-gray-600">Community Members</p>
+        </div>
+        <div>
+          <h3 class="text-3xl font-bold text-[var(--primary)]">50+</h3>
+          <p class="text-gray-600">Business Categories</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 px-6 text-center">
+      <div class="cta-box max-w-2xl mx-auto" data-aos="fade-up">
+        <h2 class="text-2xl font-bold mb-4">Are you a vendor?</h2>
+        <p class="mb-6">
+          Join Marwari Connect and showcase your business to the community.
+        </p>
+        <a href="{{ url_for('register') }}" class="btn-primary">Join Now 🚀</a>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 px-6 text-center bg-[var(--secondary)] text-white">
+      <h2 class="text-2xl font-bold mb-3">📩 Stay Updated</h2>
+      <p class="mb-6">
+        Get the latest updates, events, and vendor news directly in your inbox.
+      </p>
+      <form
+        action="#"
+        method="post"
+        class="flex justify-center gap-3 max-w-lg mx-auto"
+      >
+        <input
+          type="email"
+          placeholder="Enter your email"
+          class="px-4 py-2 rounded-lg text-black w-64"
+          required
+        />
+        <button
+          type="submit"
+          class="px-6 py-2 bg-[var(--primary)] rounded-lg hover:bg-[var(--accent)]"
+        >
+          Subscribe
+        </button>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>
+        &copy; 2025 Marwari Connect. All rights reserved. |
+        <a href="{{ url_for('terms') }}">Terms</a> |
+        <a href="{{ url_for('privacy') }}">Privacy</a> |
+        <a href="{{ url_for('blog') }}">Blog</a>
+      </p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 800, once: true, easing: "ease-in-out" });
+    </script>
+  </body>
+</html>

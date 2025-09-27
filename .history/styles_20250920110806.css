@@ -1,0 +1,7 @@
+/* Custom styles */
+body { 
+  font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; 
+}
+
+#registerModal { display: flex; }
+#registerModal.hidden { display: none; }

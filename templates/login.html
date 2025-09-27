@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login — Marwari Connect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <style>
+      :root {
+        --primary: #6b3f69;
+        --secondary: #8d5f8c;
+        --accent: #a376a2;
+        --light: #ddc3c3;
+      }
+      .input {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border-radius: 0.5rem;
+        background-color: rgba(255, 255, 255, 0.85);
+        color: var(--primary);
+        outline: none;
+        transition: 0.3s;
+        border: 1px solid var(--secondary);
+      }
+      .input:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 2px var(--accent);
+      }
+    </style>
+  </head>
+  <body
+    class="min-h-screen flex flex-col bg-[var(--light)] text-[var(--primary)]"
+  >
+    <!-- Navbar -->
+    <nav
+      class="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] shadow-md"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center gap-2">
+          <img
+            src="{{ url_for('static', filename='logo.png') }}"
+            alt="Logo"
+            class="w-10 h-10 rounded-full"
+          />
+          <span class="font-bold text-lg text-white">Marwari Connect</span>
+        </div>
+        <div class="hidden md:flex items-center gap-6 text-white font-medium">
+          <a href="{{ url_for('home') }}" class="hover:text-[var(--accent)]"
+            >Home</a
+          >
+          <a
+            href="{{ url_for('vendors_list') }}"
+            class="hover:text-[var(--accent)]"
+            >Vendors</a
+          >
+          <a href="{{ url_for('about') }}" class="hover:text-[var(--accent)]"
+            >About</a
+          >
+          <a href="{{ url_for('contact') }}" class="hover:text-[var(--accent)]"
+            >Contact</a
+          >
+          <a href="{{ url_for('blog') }}" class="hover:text-[var(--accent)]"
+            >Blog</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Login Form -->
+    <main class="flex-grow flex items-center justify-center px-6 pt-32">
+      <div
+        data-aos="fade-up"
+        class="bg-white p-8 rounded-2xl shadow-md border border-[var(--secondary)] w-full max-w-md"
+      >
+        <h1 class="text-3xl font-bold mb-6 text-center text-[var(--primary)]">
+          Login
+        </h1>
+
+        {% with messages = get_flashed_messages(with_categories=true) %} {% if
+        messages %}
+        <div class="mb-4">
+          {% for category, message in messages %}
+          <div class="bg-red-500 text-white px-4 py-2 rounded-lg shadow">
+            {{ message }}
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %} {% endwith %}
+
+        <form method="POST" action="{{ url_for('login') }}" class="space-y-4">
+          <input
+            name="email"
+            type="email"
+            placeholder="Email Address"
+            required
+            class="input"
+          />
+          <input
+            name="password"
+            type="password"
+            placeholder="Password"
+            required
+            class="input"
+          />
+          <button
+            type="submit"
+            class="w-full py-3 bg-[var(--primary)] hover:bg-[var(--secondary)] rounded-lg font-semibold text-white transition"
+          >
+            Login
+          </button>
+        </form>
+
+        <p class="mt-6 text-center text-gray-700">
+          Don’t have an account?
+          <a
+            href="{{ url_for('register') }}"
+            class="text-[var(--primary)] font-semibold underline hover:text-[var(--accent)]"
+          >
+            Register
+          </a>
+        </p>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] text-center py-6 mt-auto text-white"
+    >
+      <p class="text-sm">
+        &copy; 2025 Marwari Connect. All rights reserved. |
+        <a
+          href="{{ url_for('terms') }}"
+          class="underline hover:text-[var(--accent)]"
+          >Terms & Conditions</a
+        >
+        |
+        <a
+          href="{{ url_for('privacy') }}"
+          class="underline hover:text-[var(--accent)]"
+          >Privacy Policy</a
+        >
+      </p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 800, once: true, easing: "ease-in-out" });
+    </script>
+  </body>
+</html>

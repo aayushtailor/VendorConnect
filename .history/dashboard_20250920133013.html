@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vendor Dashboard — Jaipur Jewells</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-indigo-700 shadow-md text-white">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <span class="font-bold text-lg">Jaipur Jewells Dashboard</span>
+      <div class="flex items-center gap-4">
+        <span class="hidden sm:block">Welcome, Vendor</span>
+        <a href="login.html" class="px-4 py-2 bg-red-500 rounded-lg hover:bg-red-600">Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="flex pt-16">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white h-screen shadow-lg hidden md:block">
+      <nav class="p-6 space-y-4">
+        <a href="#profile" class="block px-4 py-2 rounded-lg hover:bg-indigo-100">Profile</a>
+        <a href="#business" class="block px-4 py-2 rounded-lg hover:bg-indigo-100">Business Info</a>
+        <a href="#images" class="block px-4 py-2 rounded-lg hover:bg-indigo-100">Images</a>
+        <a href="#settings" class="block px-4 py-2 rounded-lg hover:bg-indigo-100">Settings</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6 space-y-12">
+      <!-- Profile Section -->
+      <section id="profile" data-aos="fade-up" class="bg-white p-6 rounded-xl shadow-lg">
+        <h2 class="text-2xl font-bold mb-4">Profile Information</h2>
+        <form class="space-y-4">
+          <input type="text" placeholder="Full Name" class="w-full border px-4 py-3 rounded-lg focus:ring-2 focus:ring-indigo-400">
+          <input type="email" placeholder="Email" class="w-full border px-4 py-3 rounded-lg focus:ring-2 focus:ring-indigo-400">
+          <input type="tel" placeholder="Phone" class="w-full border px-4 py-3 rounded-lg focus:ring-2 focus:ring-indigo-400">
+          <button type="submit" class="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">Update Profile</button>
+        </form>
+      </section>
+
+      <!-- Business Section -->
+      <section id="business" data-aos="fade-up" class="bg-white p-6 rounded-xl shadow-lg">
+        <h2 class="text-2xl font-bold mb-4">Business Information</h2>
+        <form class="space-y-4">
+          <input type="text" placeholder="Business Name" class="w-full border px-4 py-3 rounded-lg focus:ring-2 focus:ring-indigo-400">
+          <input type="text" placeholder="Category (e.g., Jewellery, Tailor)" class="w-full border px-4 py-3 rounded-lg focus:ring-2 focus:ring-indigo-400">
+          <input type="text" placeholder="City" class="w-full border px-4 py-3 rounded-lg focus:ring-2 focus:ring-indigo-400">
+          <textarea placeholder="Business Description" rows="4" class="w-full border px-4 py-3 rounded-lg focus:ring-2 focus:ring-indigo-400"></textarea>
+          <button type="submit" class="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">Update Business</button>
+        </form>
+      </section>
+
+      <!-- Images Section -->
+      <section id="images" data-aos="fade-up" class="bg-white p-6 rounded-xl shadow-lg">
+        <h2 class="text-2xl font-bold mb-4">Upload Business Images</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          <div class="border rounded-lg h-32 flex items-center justify-center bg-gray-50">+ Add</div>
+          <img src="placeholder.jpg" class="h-32 w-full object-cover rounded-lg shadow">
+          <img src="placeholder.jpg" class="h-32 w-full object-cover rounded-lg shadow">
+        </div>
+        <button class="mt-4 px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700">Upload New Image</button>
+      </section>
+
+      <!-- Settings -->
+      <section id="settings" data-aos="fade-up" class="bg-white p-6 rounded-xl shadow-lg">
+        <h2 class="text-2xl font-bold mb-4">Account Settings</h2>
+        <button class="px-6 py-3 bg-red-500 text-white rounded-lg hover:bg-red-600">Delete Account</button>
+      </section>
+    </main>
+  </div>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration: 800, once: true, easing: 'ease-in-out' });</script>
+</body>
+</html>

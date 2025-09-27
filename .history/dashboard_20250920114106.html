@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vendor Dashboard — Jaipur Jewells</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-500 text-white">
+
+  <!-- Navbar -->
+  <nav class="bg-white/10 backdrop-blur-md shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <img src="logo.png" alt="Logo" class="w-10 h-10 rounded-full">
+        <span class="font-bold text-lg">Jaipur Jewells</span>
+      </div>
+      <div class="flex gap-3">
+        <a href="index.html" class="px-4 py-2 bg-indigo-600 rounded-lg hover:bg-indigo-700">Home</a>
+        <button id="logoutBtn" class="px-4 py-2 bg-pink-500 rounded-lg hover:bg-pink-600">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Dashboard -->
+  <main class="max-w-4xl mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-6">Vendor Dashboard</h1>
+
+    <!-- Profile Form -->
+    <form class="space-y-4 bg-white/20 backdrop-blur-lg p-6 rounded-2xl shadow-lg">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input type="text" placeholder="Business Name" class="p-3 rounded-lg bg-white/30 text-white placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400">
+        <input type="text" placeholder="Category" class="p-3 rounded-lg bg-white/30 text-white placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400">
+        <input type="text" placeholder="City" class="p-3 rounded-lg bg-white/30 text-white placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400">
+        <input type="text" placeholder="Phone" class="p-3 rounded-lg bg-white/30 text-white placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400">
+        <input type="text" placeholder="WhatsApp" class="p-3 rounded-lg bg-white/30 text-white placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400">
+        <input type="text" placeholder="Website" class="p-3 rounded-lg bg-white/30 text-white placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400">
+      </div>
+      <textarea placeholder="Business Description" class="w-full p-3 rounded-lg bg-white/30 text-white placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400"></textarea>
+      <input type="file" class="w-full p-2 rounded-lg bg-white/30 text-white focus:outline-none">
+      <button type="submit" class="w-full py-3 bg-pink-500 hover:bg-pink-600 rounded-lg font-semibold">Update Profile</button>
+    </form>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Notifications — Marwari Connect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="bg-[var(--light)] text-[var(--primary)] min-h-screen flex items-center justify-center"
+  >
+    <div
+      class="bg-white p-8 rounded-xl shadow-md border border-[var(--secondary)] text-center"
+    >
+      <h1 class="text-2xl font-bold mb-4">🔔 Notifications</h1>
+      <p class="text-gray-600">No notifications yet. Stay tuned!</p>
+      <a
+        href="{{ url_for('dashboard') }}"
+        class="mt-6 inline-block px-4 py-2 bg-[var(--primary)] text-white rounded-lg hover:bg-[var(--secondary)]"
+      >
+        Back to Dashboard
+      </a>
+    </div>
+  </body>
+</html>

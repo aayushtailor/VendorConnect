@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login — Jaipur Jewells</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-500 text-white">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-white/10 backdrop-blur-md shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <img src="logo.png" alt="Logo" class="w-10 h-10 rounded-full">
+        <span class="font-bold text-lg text-white">Jaipur Jewells</span>
+      </div>
+      <div class="hidden md:flex items-center gap-6 text-white font-medium">
+        <a href="index.html" class="hover:text-pink-300">Home</a>
+        <a href="about.html" class="hover:text-pink-300">About</a>
+        <a href="contact.html" class="hover:text-pink-300">Contact</a>
+        <a href="blog.html" class="hover:text-pink-300">Blog</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Login Form -->
+  <section class="pt-32 pb-16 px-6 max-w-md mx-auto">
+    <div data-aos="fade-up" class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-lg">
+      <h1 class="text-3xl font-bold mb-6 text-center">Login</h1>
+      <form class="space-y-4">
+        <input type="email" placeholder="Email Address" class="w-full px-4 py-3 rounded-lg bg-white/30 text-white placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition">
+        <input type="password" placeholder="Password" class="w-full px-4 py-3 rounded-lg bg-white/30 text-white placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition">
+        <button type="submit" class="w-full py-3 bg-indigo-600 hover:bg-indigo-700 rounded-lg font-semibold">Login</button>
+      </form>
+      <p class="mt-6 text-center text-gray-200">Don’t have an account? <a href="register.html" class="text-yellow-300 underline">Register</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-purple-700 to-indigo-700 text-center py-6">
+    <p class="text-sm">
+      &copy; 2025 Jaipur Jewells. All rights reserved. |
+      <a href="terms.html" class="underline hover:text-yellow-300">Terms & Conditions</a> |
+      <a href="privacy.html" class="underline hover:text-yellow-300">Privacy Policy</a>
+    </p>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration: 800, once: true, easing: 'ease-in-out' });</script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vendors — Marwari Connect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      :root {
+        --primary: #6b3f69;
+        --secondary: #8d5f8c;
+        --accent: #a376a2;
+        --light: #ddc3c3;
+      }
+    </style>
+  </head>
+  <body class="bg-[var(--light)] text-[var(--primary)]">
+    <!-- Navbar -->
+    <nav
+      class="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] shadow-md"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center gap-2">
+          <img
+            src="{{ url_for('static', filename='logo.png') }}"
+            alt="Logo"
+            class="w-10 h-10 rounded-full"
+          />
+          <span class="font-bold text-lg text-white">Marwari Connect</span>
+        </div>
+        <div class="hidden md:flex items-center gap-6 text-white font-medium">
+          <a href="{{ url_for('home') }}" class="hover:text-[var(--accent)]"
+            >Home</a
+          >
+          <a
+            href="{{ url_for('vendors_list') }}"
+            class="text-[var(--light)] font-bold underline"
+            >Vendors</a
+          >
+          <a href="{{ url_for('about') }}" class="hover:text-[var(--accent)]"
+            >About</a
+          >
+          <a href="{{ url_for('contact') }}" class="hover:text-[var(--accent)]"
+            >Contact</a
+          >
+          <a href="{{ url_for('blog') }}" class="hover:text-[var(--accent)]"
+            >Blog</a
+          >
+        </div>
+      </div>
+    </nav>
+    <!-- Hero -->
+    <header class="text-center pt-28 pb-12 px-4">
+      <h1 data-aos="fade-up" class="text-4xl font-extrabold mb-2">
+        Our Verified Vendors
+      </h1>
+      <p
+        data-aos="fade-up"
+        data-aos-delay="200"
+        class="text-[var(--secondary)]"
+      >
+        Discover trusted vendors approved by Marwari Connect
+      </p>
+
+      <!-- Search & Filters -->
+      <form
+        method="get"
+        action="{{ url_for('vendors_list') }}"
+        class="mt-6 flex flex-wrap justify-center gap-4"
+      >
+        <input
+          type="text"
+          name="search"
+          value="{{ search }}"
+          placeholder="Search vendors..."
+          class="px-4 py-2 rounded-lg border border-gray-300 w-64 focus:ring-2 focus:ring-[var(--primary)]"
+        />
+        <input
+          type="text"
+          name="category"
+          value="{{ category }}"
+          placeholder="Filter by category"
+          class="px-4 py-2 rounded-lg border border-gray-300 w-48 focus:ring-2 focus:ring-[var(--primary)]"
+        />
+        <input
+          type="text"
+          name="city"
+          value="{{ city }}"
+          placeholder="Filter by city"
+          class="px-4 py-2 rounded-lg border border-gray-300 w-48 focus:ring-2 focus:ring-[var(--primary)]"
+        />
+        <button
+          type="submit"
+          class="px-6 py-2 bg-[var(--primary)] text-white rounded-lg hover:bg-[var(--secondary)]"
+        >
+          🔍 Search
+        </button>
+      </form>
+    </header>
+
+    <header class="text-center pt-28 pb-12 px-4">
+      <h1 data-aos="fade-up" class="text-4xl font-extrabold mb-2">
+        Our Verified Vendors
+      </h1>
+      <p
+        data-aos="fade-up"
+        data-aos-delay="200"
+        class="text-[var(--secondary)]"
+      >
+        Discover trusted vendors approved by Marwari Connect
+      </p>
+    </header>
+
+    <!-- Vendor Grid -->
+    <main
+      class="max-w-6xl mx-auto px-4 pb-16 grid sm:grid-cols-2 md:grid-cols-3 gap-8"
+    >
+      {% for v in vendors %}
+      <a
+        href="{{ url_for('vendor_profile', vendor_id=v[0]) }}"
+        data-aos="fade-up"
+        class="bg-white p-4 shadow-md rounded-2xl overflow-hidden border border-[var(--secondary)] hover:scale-105 transition block"
+      >
+        <img
+          src="{{ url_for('static', filename='uploads/' ~ v[8]) }}"
+          alt="{{ v[2] }}"
+          class="w-full h-44 object-cover rounded-xl shadow"
+        />
+        <div class="p-3">
+          <h2
+            class="text-lg font-bold flex items-center gap-2 text-[var(--primary)]"
+          >
+            {{ v[2] }} {% if v[10] == 1 %}
+            <span class="text-green-600 text-sm font-semibold">✔ Verified</span>
+            {% endif %}
+          </h2>
+          <p class="text-gray-700 text-sm">{{ v[3] }} • {{ v[4] }}</p>
+          <p class="mt-2 text-gray-600 text-sm">Owner: {{ v[1] }}</p>
+        </div>
+      </a>
+      {% else %}
+      <p class="col-span-full text-center text-gray-600">
+        No vendors available yet.
+      </p>
+      {% endfor %}
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] text-center py-6 text-white"
+    >
+      <p class="text-sm">
+        &copy; 2025 Marwari Connect. All rights reserved. |
+        <a
+          href="{{ url_for('terms') }}"
+          class="underline hover:text-[var(--accent)]"
+          >Terms & Conditions</a
+        >
+        |
+        <a
+          href="{{ url_for('privacy') }}"
+          class="underline hover:text-[var(--accent)]"
+          >Privacy Policy</a
+        >
+      </p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 800, once: true, easing: "ease-in-out" });
+    </script>
+  </body>
+</html>

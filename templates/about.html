@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About Us — Marwari Connect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      :root {
+        --primary: #6b3f69; /* Deep muted purple */
+        --secondary: #8d5f8c; /* Mauve */
+        --accent: #a376a2; /* Lavender */
+        --light: #ddc3c3; /* Soft rose */
+      }
+    </style>
+  </head>
+  <body class="bg-[var(--light)] text-[var(--primary)]">
+    <!-- Navbar -->
+    <nav
+      class="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] shadow-md"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <!-- Logo -->
+        <div class="flex items-center gap-2">
+          <img
+            src="{{ url_for('static', filename='logo.png') }}"
+            alt="Logo"
+            class="w-10 h-10 rounded-full"
+          />
+          <span class="font-bold text-lg text-white">Marwari Connect</span>
+        </div>
+
+        <!-- Desktop Links -->
+        <div class="hidden md:flex items-center gap-6 text-white font-medium">
+          <a href="{{ url_for('home') }}" class="hover:text-[var(--accent)]"
+            >Home</a
+          >
+          <a
+            href="{{ url_for('vendors_list') }}"
+            class="hover:text-[var(--accent)]"
+            >Vendors</a
+          >
+          <a
+            href="{{ url_for('about') }}"
+            class="text-[var(--accent)] font-bold"
+            >About</a
+          >
+          <a href="{{ url_for('contact') }}" class="hover:text-[var(--accent)]"
+            >Contact</a
+          >
+          <a href="{{ url_for('blog') }}" class="hover:text-[var(--accent)]"
+            >Blog</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- About Hero -->
+    <section class="pt-32 pb-16 text-center px-6 max-w-4xl mx-auto">
+      <h1
+        data-aos="fade-up"
+        class="text-4xl md:text-5xl font-extrabold mb-4 text-[var(--primary)]"
+      >
+        About Marwari Connect
+      </h1>
+      <p
+        data-aos="fade-up"
+        data-aos-delay="200"
+        class="text-lg text-[var(--secondary)]"
+      >
+        Empowering Marwari businesses by creating a trusted digital network for
+        growth, collaboration, and visibility.
+      </p>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-12 px-6 max-w-5xl mx-auto grid md:grid-cols-2 gap-10">
+      <div class="bg-white shadow-md rounded-xl p-8" data-aos="fade-right">
+        <h2 class="text-2xl font-bold text-[var(--primary)] mb-3">
+          🌟 Our Mission
+        </h2>
+        <p class="text-gray-700">
+          At Marwari Connect, our mission is to bridge tradition with modern
+          business needs. We aim to bring every Marwari vendor, entrepreneur,
+          and professional onto one digital platform where they can grow their
+          reach, gain visibility, and build meaningful business connections.
+        </p>
+      </div>
+      <div class="bg-white shadow-md rounded-xl p-8" data-aos="fade-left">
+        <h2 class="text-2xl font-bold text-[var(--primary)] mb-3">
+          🚀 Our Vision
+        </h2>
+        <p class="text-gray-700">
+          To create the largest online directory and community hub for Marwari
+          businesses — fostering trust, collaboration, and a strong digital
+          presence across industries like jewellery, textiles, hospitality,
+          education, and more.
+        </p>
+      </div>
+    </section>
+
+    <!-- Core Values -->
+    <section
+      class="py-12 bg-gradient-to-r from-[var(--secondary)] to-[var(--accent)] text-white text-center"
+    >
+      <h2 class="text-3xl font-bold mb-8">Our Core Values</h2>
+      <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div class="p-6 bg-white/10 rounded-lg shadow-md" data-aos="zoom-in">
+          <h3 class="font-semibold text-lg mb-2">🤝 Community</h3>
+          <p>
+            We believe in unity and mutual support among Marwari businesses.
+          </p>
+        </div>
+        <div
+          class="p-6 bg-white/10 rounded-lg shadow-md"
+          data-aos="zoom-in"
+          data-aos-delay="200"
+        >
+          <h3 class="font-semibold text-lg mb-2">🌍 Growth</h3>
+          <p>
+            Helping local businesses expand their reach through digital
+            visibility.
+          </p>
+        </div>
+        <div
+          class="p-6 bg-white/10 rounded-lg shadow-md"
+          data-aos="zoom-in"
+          data-aos-delay="400"
+        >
+          <h3 class="font-semibold text-lg mb-2">🔒 Trust</h3>
+          <p>
+            Every vendor listed is verified to ensure reliability and
+            credibility.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16 px-6 text-center max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold text-[var(--primary)] mb-6">
+        Why Choose Marwari Connect?
+      </h2>
+      <p class="text-gray-700 mb-10">
+        Because we are not just a directory — we are a community. Whether you
+        are a jewellery maker, an entrepreneur, a restaurant owner, or an
+        educator, Marwari Connect helps you shine in the digital space with
+        opportunities to connect, collaborate, and grow.
+      </p>
+      <a
+        href="{{ url_for('register') }}"
+        class="px-6 py-3 rounded-lg bg-[var(--primary)] text-white hover:bg-[var(--secondary)] transition"
+      >
+        Join the Network 🚀
+      </a>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] text-center py-6 text-white"
+    >
+      <p class="text-sm">
+        &copy; 2025 Marwari Connect. All rights reserved. |
+        <a
+          href="{{ url_for('terms') }}"
+          class="underline hover:text-[var(--accent)]"
+          >Terms & Conditions</a
+        >
+        |
+        <a
+          href="{{ url_for('privacy') }}"
+          class="underline hover:text-[var(--accent)]"
+          >Privacy Policy</a
+        >
+        |
+        <a
+          href="{{ url_for('blog') }}"
+          class="underline hover:text-[var(--accent)]"
+          >Blog</a
+        >
+      </p>
+    </footer>
+
+    <!-- JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 800, once: true, easing: "ease-in-out" });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog — Jaipur Jewells</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-500 text-white">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-white/10 backdrop-blur-md shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <img src="logo.png" alt="Logo" class="w-10 h-10 rounded-full">
+        <span class="font-bold text-lg text-white">Jaipur Jewells</span>
+      </div>
+      <div class="hidden md:flex items-center gap-6 text-white font-medium">
+        <a href="index.html" class="hover:text-pink-300">Home</a>
+        <a href="index.html#vendorsGrid" class="hover:text-pink-300">Vendors</a>
+        <a href="about.html" class="hover:text-pink-300">About</a>
+        <a href="contact.html" class="hover:text-pink-300">Contact</a>
+        <a href="blog.html" class="text-pink-300 font-bold">Blog</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="pt-32 pb-12 text-center px-6 max-w-4xl mx-auto">
+    <h1 data-aos="fade-up" class="text-4xl md:text-5xl font-extrabold mb-4">Our Blog</h1>
+    <p data-aos="fade-up" data-aos-delay="200" class="text-lg text-gray-200">Latest insights, tips, and trends from Jaipur’s vendors.</p>
+  </section>
+
+  <!-- Blog Grid -->
+  <section class="max-w-6xl mx-auto px-6 pb-16 grid md:grid-cols-3 gap-8">
+    <a href="blog-single.html" data-aos="fade-up" class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 shadow-lg hover:scale-105 transition block">
+      <img src="placeholder.jpg" alt="Blog" class="rounded-xl mb-4 w-full h-48 object-cover">
+      <h3 class="text-xl font-bold mb-2">Top Jewellery Trends in Jaipur 2025</h3>
+      <p class="text-gray-200 text-sm">Explore the latest jewellery styles that are taking Jaipur by storm this year...</p>
+    </a>
+
+    <a href="blog-single.html" data-aos="fade-up" data-aos-delay="100" class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 shadow-lg hover:scale-105 transition block">
+      <img src="placeholder.jpg" alt="Blog" class="rounded-xl mb-4 w-full h-48 object-cover">
+      <h3 class="text-xl font-bold mb-2">Why Local Vendors are Jaipur’s Backbone</h3>
+      <p class="text-gray-200 text-sm">Discover why supporting local businesses creates stronger communities...</p>
+    </a>
+
+    <a href="blog-single.html" data-aos="fade-up" data-aos-delay="200" class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 shadow-lg hover:scale-105 transition block">
+      <img src="placeholder.jpg" alt="Blog" class="rounded-xl mb-4 w-full h-48 object-cover">
+      <h3 class="text-xl font-bold mb-2">Planning a Wedding? Vendors You Need</h3>
+      <p class="text-gray-200 text-sm">From jewellery to photographers — here’s your complete vendor checklist...</p>
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-purple-700 to-indigo-700 text-center py-6">
+    <p class="text-sm">
+      &copy; 2025 Jaipur Jewells. All rights reserved. |
+      <a href="terms.html" class="underline hover:text-yellow-300">Terms & Conditions</a> |
+      <a href="privacy.html" class="underline hover:text-yellow-300">Privacy Policy</a> |
+      <a href="blog.html" class="underline hover:text-yellow-300">Blog</a>
+    </p>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true, easing: 'ease-in-out' });
+  </script>
+</body>
+</html>

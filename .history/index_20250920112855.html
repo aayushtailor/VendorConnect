@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jaipur Jewells — Trendy Vendor Directory</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS (animations) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-500 text-white">
+    
+  <!-- Hero Section -->
+  <section class="relative h-[80vh] flex flex-col justify-center items-center text-center px-4">
+    <h1 data-aos="fade-up" class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
+      Discover Jaipur’s Best Local Vendors ✨
+    </h1>
+    <p data-aos="fade-up" data-aos-delay="200" class="text-lg md:text-xl mb-6">
+      Find trusted businesses for jewellery, fashion, weddings, and more.
+    </p>
+    <div data-aos="fade-up" data-aos-delay="400" class="flex w-full max-w-2xl bg-white/20 backdrop-blur-lg rounded-xl p-2">
+      <input id="searchInput" placeholder="Search vendors..." class="flex-1 bg-transparent px-4 py-3 text-white placeholder-gray-300 focus:outline-none" />
+      <button id="searchBtn" class="px-6 py-3 bg-pink-500 hover:bg-pink-600 rounded-lg text-white font-semibold">
+        Search
+      </button>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="max-w-6xl mx-auto px-4 py-8">
+    <h2 class="text-2xl font-bold mb-4">Browse by Category</h2>
+    <div class="flex gap-3 overflow-x-auto pb-2">
+      <div class="category-chip">💍 Jewellery</div>
+      <div class="category-chip">🧵 Tailor</div>
+      <div class="category-chip">📸 Photographer</div>
+      <div class="category-chip">💄 Makeup Artist</div>
+      <div class="category-chip">🎉 Event Planner</div>
+    </div>
+  </section>
+
+  <!-- Vendors Section -->
+  <section class="max-w-6xl mx-auto px-4 py-8">
+    <h2 class="text-2xl font-bold mb-6">Featured Vendors</h2>
+    <div id="vendorsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    <p id="noResults" class="text-center text-gray-200 mt-8 hidden">No vendors found.</p>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="max-w-6xl mx-auto px-4 py-12 text-center">
+    <div class="bg-white/10 backdrop-blur-xl rounded-2xl p-8 shadow-lg">
+      <h3 class="text-2xl font-bold mb-3">Are you a local vendor?</h3>
+      <p class="mb-5">Join Jaipur Jewells today and connect with thousands of customers.</p>
+      <button id="openRegister" class="px-6 py-3 bg-gradient-to-r from-pink-500 to-yellow-400 text-white rounded-xl shadow-lg hover:scale-105 transition">
+        Register Now 🚀
+      </button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-purple-700 to-indigo-700 text-center py-6">
+    <p class="text-sm">&copy; 2025 Jaipur Jewells. All rights reserved.</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="app.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+  </script>
+</body>
+</html>

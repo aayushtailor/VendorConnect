@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jaipur Jewells — Trendy Vendor Directory</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-500 text-white">
+
+  <!-- Hero Section -->
+  <section class="relative h-[80vh] flex flex-col justify-center items-center text-center px-4">
+    <h1 data-aos="fade-up" class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
+      Discover Jaipur’s Best Local Vendors ✨
+    </h1>
+    <p data-aos="fade-up" data-aos-delay="200" class="text-lg md:text-xl mb-6">
+      Find trusted businesses for jewellery, fashion, weddings, and more.
+    </p>
+    <div data-aos="fade-up" data-aos-delay="400" class="flex w-full max-w-2xl bg-white/20 backdrop-blur-lg rounded-xl p-2">
+      <input id="searchInput" placeholder="Search vendors..." class="flex-1 bg-transparent px-4 py-3 text-white placeholder-gray-300 focus:outline-none" />
+      <button id="searchBtn" class="px-6 py-3 bg-pink-500 hover:bg-pink-600 rounded-lg text-white font-semibold">
+        Search
+      </button>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="max-w-6xl mx-auto px-4 py-8">
+    <h2 class="text-2xl font-bold mb-4">Browse by Category</h2>
+    <div class="flex gap-3 overflow-x-auto pb-2">
+      <div class="category-chip">💍 Jewellery</div>
+      <div class="category-chip">🧵 Tailor</div>
+      <div class="category-chip">📸 Photographer</div>
+      <div class="category-chip">💄 Makeup Artist</div>
+      <div class="category-chip">🎉 Event Planner</div>
+    </div>
+  </section>
+
+ 
+   function makeCard(v){
+  const name = v.business_name ? v.business_name : (v.name || "Unnamed Vendor");
+  const category = v.category || "Uncategorized";
+  const city = v.city || "Jaipur";
+  const desc = v.description ? v.description.slice(0, 90) : "No description available";
+
+  return `
+    <div data-aos="fade-up" 
+         class="bg-white/30 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition duration-300">
+      <img src="placeholder.jpg" class="w-full h-48 object-cover" alt="${name}" />
+      <div class="p-5 text-gray-900">
+        <h3 class="text-lg font-bold text-gray-800">${name}</h3>
+        <p class="text-sm text-gray-600 mb-2">${category} • ${city}</p>
+        <p class="text-sm text-gray-700 mb-3">${desc}...</p>
+        <div class="flex justify-between items-center">
+          <a href="vendor.html?id=${v.id}" 
+             class="text-sm font-semibold text-indigo-600 hover:text-indigo-800">
+             View Profile →
+          </a>
+          <div class="flex gap-2">
+            ${v.phone ? `<a href="tel:${v.phone}" class="text-xs px-3 py-1 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition">Call</a>` : ''}
+            ${v.whatsapp ? `<a href="https://wa.me/${v.whatsapp}" target="_blank" class="text-xs px-3 py-1 bg-green-600 text-white rounded-full hover:bg-green-700 transition">WhatsApp</a>` : ''}
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+
+
+
+
+  <!-- CTA Banner -->
+  <section class="max-w-6xl mx-auto px-4 py-12 text-center">
+    <div class="bg-white/10 backdrop-blur-xl rounded-2xl p-8 shadow-lg">
+      <h3 class="text-2xl font-bold mb-3">Are you a local vendor?</h3>
+      <p class="mb-5">Join Jaipur Jewells today and connect with thousands of customers.</p>
+      <button id="openRegister" class="px-6 py-3 bg-gradient-to-r from-pink-500 to-yellow-400 text-white rounded-xl shadow-lg hover:scale-105 transition">
+        Register Now 🚀
+      </button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-purple-700 to-indigo-700 text-center py-6">
+    <p class="text-sm">&copy; 2025 Jaipur Jewells. All rights reserved.</p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>AOS.init({ duration: 800, once: true });</script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vendor Dashboard — Jaipur Jewells</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-indigo-700 shadow-md text-white">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <span class="font-bold text-lg">Jaipur Jewells Dashboard</span>
+      <div class="flex items-center gap-6">
+        <!-- Notifications -->
+        <div class="relative">
+          <button id="notifBtn" class="relative">
+            🔔
+            <span class="absolute -top-2 -right-2 bg-red-500 text-xs px-1 rounded-full">3</span>
+          </button>
+          <div id="notifDropdown" class="hidden absolute right-0 mt-2 w-64 bg-white text-gray-800 shadow-lg rounded-lg overflow-hidden">
+            <div class="p-3 border-b font-semibold">Notifications</div>
+            <ul class="max-h-60 overflow-y-auto">
+              <li class="p-3 hover:bg-gray-100">New inquiry from Rohan</li>
+              <li class="p-3 hover:bg-gray-100">Admin approved your profile</li>
+              <li class="p-3 hover:bg-gray-100">You received a new review ⭐⭐⭐⭐</li>
+            </ul>
+          </div>
+        </div>
+        <a href="login.html" class="px-4 py-2 bg-red-500 rounded-lg hover:bg-red-600">Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="flex pt-16">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white h-screen shadow-lg hidden md:block">
+      <nav class="p-6 space-y-4">
+        <a href="#profile" class="block px-4 py-2 rounded-lg hover:bg-indigo-100">Profile</a>
+        <a href="#business" class="block px-4 py-2 rounded-lg hover:bg-indigo-100">Business Info</a>
+        <a href="#images" class="block px-4 py-2 rounded-lg hover:bg-indigo-100">Images</a>
+        <a href="#reviews" class="block px-4 py-2 rounded-lg hover:bg-indigo-100">Reviews</a>
+        <a href="#settings" class="block px-4 py-2 rounded-lg hover:bg-indigo-100">Settings</a>
+
+        <!-- Admin Only -->
+        <div id="adminLinks" class="hidden border-t pt-4 mt-4">
+          <h3 class="text-sm text-gray-500 mb-2">Admin</h3>
+          <a href="#manageVendors" class="block px-4 py-2 rounded-lg hover:bg-red-100">Manage Vendors</a>
+          <a href="#manageBlogs" class="block px-4 py-2 rounded-lg hover:bg-red-100">Manage Blogs</a>
+          <a href="#analytics" class="block px-4 py-2 rounded-lg hover:bg-red-100">Analytics</a>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6 space-y-12">
+      <!-- Profile Section -->
+      <section id="profile" data-aos="fade-up" class="bg-white p-6 rounded-xl shadow-lg">
+        <h2 class="text-2xl font-bold mb-4">Profile Information</h2>
+        <form class="space-y-4">
+          <input type="text" placeholder="Full Name" class="w-full border px-4 py-3 rounded-lg focus:ring-2 focus:ring-indigo-400">
+          <input type="email" placeholder="Email" class="w-full border px-4 py-3 rounded-lg focus:ring-2 focus:ring-indigo-400">
+          <input type="tel" placeholder="Phone" class="w-full border px-4 py-3 rounded-lg focus:ring-2 focus:ring-indigo-400">
+          <button type="submit" class="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">Update Profile</button>
+        </form>
+      </section>
+
+      <!-- Business Section -->
+      <section id="business" data-aos="fade-up" class="bg-white p-6 rounded-xl shadow-lg">
+        <h2 class="text-2xl font-bold mb-4">Business Information</h2>
+        <form class="space-y-4">
+          <input type="text" placeholder="Business Name" class="w-full border px-4 py-3 rounded-lg focus:ring-2 focus:ring-indigo-400">
+          <input type="text" placeholder="Category" class="w-full border px-4 py-3 rounded-lg focus:ring-2 focus:ring-indigo-400">
+          <input type="text" placeholder="City" class="w-full border px-4 py-3 rounded-lg focus:ring-2 focus:ring-indigo-400">
+          <textarea placeholder="Business Description" rows="4" class="w-full border px-4 py-3 rounded-lg focus:ring-2 focus:ring-indigo-400"></textarea>
+          <button type="submit" class="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">Update Business</button>
+        </form>
+      </section>
+
+      <!-- Images (Portfolio Gallery) -->
+      <section id="images" data-aos="fade-up" class="bg-white p-6 rounded-xl shadow-lg">
+        <h2 class="text-2xl font-bold mb-4">Portfolio Gallery</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          <div class="border rounded-lg h-32 flex items-center justify-center bg-gray-50 cursor-pointer">+ Upload</div>
+          <img src="placeholder.jpg" class="h-32 w-full object-cover rounded-lg shadow">
+          <img src="placeholder.jpg" class="h-32 w-full object-cover rounded-lg shadow">
+          <img src="placeholder.jpg" class="h-32 w-full object-cover rounded-lg shadow">
+        </div>
+      </section>
+
+      <!-- Reviews -->
+      <section id="reviews" data-aos="fade-up" class="bg-white p-6 rounded-xl shadow-lg">
+        <h2 class="text-2xl font-bold mb-4">Customer Reviews</h2>
+        <div class="space-y-6">
+          <div class="border-b pb-4">
+            <p class="font-semibold">Rohan Sharma <span class="text-yellow-500">⭐⭐⭐⭐</span></p>
+            <p class="text-gray-600">Great service and beautiful collection of jewellery!</p>
+            <textarea class="w-full border px-3 py-2 rounded-lg mt-2" placeholder="Reply to this review..."></textarea>
+            <button class="mt-2 px-4 py-2 bg-indigo-600 text-white rounded-lg">Reply</button>
+          </div>
+          <div class="border-b pb-4">
+            <p class="font-semibold">Meera Tailor <span class="text-yellow-500">⭐⭐⭐⭐⭐</span></p>
+            <p class="text-gray-600">Very professional and quick delivery. Highly recommend!</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Settings -->
+      <section id="settings" data-aos="fade-up" class="bg-white p-6 rounded-xl shadow-lg">
+        <h2 class="text-2xl font-bold mb-4">Account Settings</h2>
+        <button class="px-6 py-3 bg-red-500 text-white rounded-lg hover:bg-red-600">Delete Account</button>
+      </section>
+    </main>
+  </div>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true, easing: 'ease-in-out' });
+
+    // Notification dropdown toggle
+    document.getElementById("notifBtn").addEventListener("click", () => {
+      document.getElementById("notifDropdown").classList.toggle("hidden");
+    });
+
+    // Simulate admin login (set to true if admin)
+    const isAdmin = true;
+    if(isAdmin){
+      document.getElementById("adminLinks").classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>

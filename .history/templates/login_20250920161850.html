@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login — Jaipur Jewells</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- ✅ Flask static CSS (optional if you add styles.css) -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="min-h-screen flex flex-col bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-500 text-white">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-white/10 backdrop-blur-md shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="w-10 h-10 rounded-full">
+        <span class="font-bold text-lg text-white">Jaipur Jewells</span>
+      </div>
+      <div class="hidden md:flex items-center gap-6 text-white font-medium">
+        <a href="{{ url_for('home') }}" class="hover:text-pink-300">Home</a>
+        <a href="{{ url_for('render_page', page='about') }}" class="hover:text-pink-300">About</a>
+        <a href="{{ url_for('render_page', page='contact') }}" class="hover:text-pink-300">Contact</a>
+        <a href="{{ url_for('render_page', page='blog') }}" class="hover:text-pink-300">Blog</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Login Form Centered -->
+  <main class="flex-grow flex items-center justify-center px-6">
+    <div data-aos="fade-up" class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-lg w-full max-w-md">
+      <h1 class="text-3xl font-bold mb-6 text-center">Login</h1>
+      
+      <!-- ✅ Form action linked to Flask login route -->
+      <form method="POST" action="{{ url_for('render_page', page='login') }}" class="space-y-4">
+        <input name="email" type="email" placeholder="Email Address" required 
+               class="w-full px-4 py-3 rounded-lg bg-white/30 text-white placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition">
+        
+        <input name="password" type="password" placeholder="Password" required 
+               class="w-full px-4 py-3 rounded-lg bg-white/30 text-white placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition">
+        
+        <button type="submit" class="w-full py-3 bg-indigo-600 hover:bg-indigo-700 rounded-lg font-semibold">
+          Login
+        </button>
+      </form>
+
+      <p class="mt-6 text-center text-gray-200">
+        Don’t have an account? 
+        <a href="{{ url_for('render_page', page='register') }}" class="text-yellow-300 underline">Register</a>
+      </p>
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration: 800, once: true, easing: 'ease-in-out' });</script>
+</body>
+</html>

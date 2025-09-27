@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us — Jaipur Jewells</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-500 text-white">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-white/10 backdrop-blur-md shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <!-- Logo -->
+      <div class="flex items-center gap-2">
+        <img src="logo.png" alt="Logo" class="w-10 h-10 rounded-full">
+        <span class="font-bold text-lg text-white">Jaipur Jewells</span>
+      </div>
+
+      <!-- Desktop Links -->
+      <div class="hidden md:flex items-center gap-6 text-white font-medium">
+        <a href="index.html" class="hover:text-pink-300">Home</a>
+        <a href="vendor.html" class="hover:text-pink-300">Vendors</a>
+        <a href="about.html" class="text-pink-300 font-bold">About</a>
+        <a href="contact.html" class="hover:text-pink-300">Contact</a>
+        <a href="blog.html" class="hover:text-pink-300">Blog</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="fixed inset-0 bg-black/70 backdrop-blur-md z-40 hidden">
+    <div class="absolute top-0 right-0 w-64 h-full bg-white/90 text-gray-900 shadow-lg p-6 flex flex-col">
+      <button id="closeMenu" class="self-end mb-6 text-2xl font-bold text-gray-700">&times;</button>
+      <a href="index.html" class="mb-4 text-lg font-semibold hover:text-pink-500">Home</a>
+      <a href="index.html#vendorsGrid" class="mb-4 text-lg font-semibold hover:text-pink-500">Vendors</a>
+      <a href="about.html" class="mb-4 text-lg font-semibold hover:text-pink-500">About</a>
+      <a href="contact.html" class="mb-4 text-lg font-semibold hover:text-pink-500">Contact</a>
+      <a href="blog.html" class="mb-6 text-lg font-semibold hover:text-pink-500">Blog</a>
+      <a href="login.html" class="mb-3 px-4 py-2 bg-indigo-600 text-white rounded-lg text-center hover:bg-indigo-700">Login</a>
+      <a href="register.html" class="px-4 py-2 bg-pink-500 text-white rounded-lg text-center hover:bg-pink-600">Register</a>
+    </div>
+  </div>
+
+  <!-- About Hero -->
+  <section class="pt-32 pb-16 text-center px-6 max-w-4xl mx-auto">
+    <h1 data-aos="fade-up" class="text-4xl md:text-5xl font-extrabold mb-4">About Jaipur Jewells</h1>
+    <p data-aos="fade-up" data-aos-delay="200" class="text-lg text-gray-200">
+      Connecting Jaipur’s finest local businesses with customers who value quality, trust, and tradition.
+    </p>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-2 gap-8">
+    <div data-aos="fade-right" class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-lg">
+      <h2 class="text-2xl font-bold mb-3">Our Mission</h2>
+      <p class="text-gray-200">
+        At Jaipur Jewells, our mission is to create a powerful digital platform where local vendors can showcase their work, connect with new customers, and grow their businesses.
+      </p>
+    </div>
+    <div data-aos="fade-left" class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-lg">
+      <h2 class="text-2xl font-bold mb-3">Our Vision</h2>
+      <p class="text-gray-200">
+        We envision Jaipur Jewells as the go-to directory for jewellery, fashion, events, and lifestyle vendors in Jaipur.
+      </p>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <h2 data-aos="fade-up" class="text-3xl font-bold text-center mb-8">Why Choose Jaipur Jewells?</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div data-aos="zoom-in" class="bg-white/10 backdrop-blur-lg p-6 rounded-xl shadow-lg text-center">
+        <h3 class="text-xl font-semibold mb-3">Verified Vendors</h3>
+        <p class="text-gray-200">Every vendor profile is checked and approved to ensure quality and reliability.</p>
+      </div>
+      <div data-aos="zoom-in" data-aos-delay="200" class="bg-white/10 backdrop-blur-lg p-6 rounded-xl shadow-lg text-center">
+        <h3 class="text-xl font-semibold mb-3">One-Stop Platform</h3>
+        <p class="text-gray-200">From jewellers to event planners, discover a wide range of trusted businesses in one place.</p>
+      </div>
+      <div data-aos="zoom-in" data-aos-delay="400" class="bg-white/10 backdrop-blur-lg p-6 rounded-xl shadow-lg text-center">
+        <h3 class="text-xl font-semibold mb-3">Customer Convenience</h3>
+        <p class="text-gray-200">Quick search, direct call/WhatsApp, and location info make connecting effortless.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="max-w-5xl mx-auto px-6 py-12">
+    <h2 data-aos="fade-up" class="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+    <div class="space-y-6">
+      <details data-aos="fade-up" class="bg-white/10 backdrop-blur-lg rounded-xl p-6 shadow-lg">
+        <summary class="cursor-pointer text-xl font-semibold">💎 What is Jaipur Jewells?</summary>
+        <p class="mt-3 text-gray-200">Jaipur Jewells is a modern online directory connecting customers with trusted local vendors.</p>
+      </details>
+      <details data-aos="fade-up" data-aos-delay="100" class="bg-white/10 backdrop-blur-lg rounded-xl p-6 shadow-lg">
+        <summary class="cursor-pointer text-xl font-semibold">📝 How do I register as a vendor?</summary>
+        <p class="mt-3 text-gray-200">Visit the <a href="register.html" class="text-yellow-300 underline">Register page</a> and submit your profile.</p>
+      </details>
+      <details data-aos="fade-up" data-aos-delay="200" class="bg-white/10 backdrop-blur-lg rounded-xl p-6 shadow-lg">
+        <summary class="cursor-pointer text-xl font-semibold">📢 Is registering free?</summary>
+        <p class="mt-3 text-gray-200">Yes, basic vendor registration is free. Premium features may come later.</p>
+      </details>
+      <details data-aos="fade-up" data-aos-delay="300" class="bg-white/10 backdrop-blur-lg rounded-xl p-6 shadow-lg">
+        <summary class="cursor-pointer text-xl font-semibold">🔒 How safe is my data?</summary>
+        <p class="mt-3 text-gray-200">All vendor info is stored securely and only shared with consent.</p>
+      </details>
+      <details data-aos="fade-up" data-aos-delay="400" class="bg-white/10 backdrop-blur-lg rounded-xl p-6 shadow-lg">
+        <summary class="cursor-pointer text-xl font-semibold">📞 How can customers contact vendors?</summary>
+        <p class="mt-3 text-gray-200">Each profile includes phone, WhatsApp, and email for direct contact.</p>
+      </details>
+      <details data-aos="fade-up" data-aos-delay="500" class="bg-white/10 backdrop-blur-lg rounded-xl p-6 shadow-lg">
+        <summary class="cursor-pointer text-xl font-semibold">🛠 Can I update my profile later?</summary>
+        <p class="mt-3 text-gray-200">Yes, vendors can log in anytime and update their profile.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section data-aos="zoom-in" class="text-center py-16 px-6">
+    <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-10 shadow-lg inline-block max-w-2xl">
+      <h2 class="text-2xl font-bold mb-4">Are you a vendor in Jaipur?</h2>
+      <p class="text-gray-200 mb-6">Showcase your work and reach more customers by joining Jaipur Jewells today.</p>
+      <a href="register.html" class="px-6 py-3 bg-gradient-to-r from-pink-500 to-yellow-400 text-white rounded-xl shadow-lg hover:scale-105 transition inline-block">
+        Register Now 🚀
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-purple-700 to-indigo-700 text-center py-6">
+    <p class="text-sm">
+      &copy; 2025 Jaipur Jewells. All rights reserved. |
+      <a href="terms.html" class="underline hover:text-yellow-300">Terms & Conditions</a> |
+      <a href="privacy.html" class="underline hover:text-yellow-300">Privacy Policy</a> |
+      <a href="blog.html" class="underline hover:text-yellow-300">Blog</a>
+    </p>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: 'ease-in-out'
+    });
+  </script>
+</body>
+</html>

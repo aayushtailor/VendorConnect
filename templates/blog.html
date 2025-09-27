@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ title or "Blog Post — Marwari Connect" }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      :root {
+        --primary: #6b3f69;
+        --secondary: #8d5f8c;
+        --accent: #a376a2;
+        --light: #ddc3c3;
+      }
+    </style>
+  </head>
+  <body class="bg-[var(--light)] text-[var(--primary)]">
+    <!-- Navbar -->
+    <nav
+      class="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] shadow-md"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center gap-2">
+          <img
+            src="{{ url_for('static', filename='logo.png') }}"
+            alt="Logo"
+            class="w-10 h-10 rounded-full"
+          />
+          <span class="font-bold text-lg text-white">Marwari Connect</span>
+        </div>
+        <div class="hidden md:flex items-center gap-6 text-white font-medium">
+          <a href="{{ url_for('home') }}" class="hover:text-[var(--accent)]"
+            >Home</a
+          >
+          <a href="{{ url_for('about') }}" class="hover:text-[var(--accent)]"
+            >About</a
+          >
+          <a href="{{ url_for('contact') }}" class="hover:text-[var(--accent)]"
+            >Contact</a
+          >
+          <a href="{{ url_for('blog') }}" class="text-[var(--accent)] font-bold"
+            >Blog</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Blog Content -->
+    <article class="pt-32 max-w-4xl mx-auto px-6 pb-16">
+      <img
+        data-aos="zoom-in"
+        src="{{ url_for('static', filename='placeholder.jpg') }}"
+        alt="Blog Image"
+        class="w-full h-80 object-cover rounded-2xl mb-8 shadow-lg"
+      />
+      <h1
+        data-aos="fade-up"
+        class="text-4xl font-extrabold mb-4 text-[var(--primary)]"
+      >
+        {{ title or "Top Jewellery Trends in Jaipur 2025" }}
+      </h1>
+      <p
+        data-aos="fade-up"
+        data-aos-delay="100"
+        class="text-[var(--secondary)] mb-8"
+      >
+        Published on {{ date or "January 20, 2025" }} • By Marwari Connect Team
+      </p>
+
+      <div
+        data-aos="fade-up"
+        data-aos-delay="200"
+        class="prose max-w-none bg-white p-6 rounded-xl shadow-md text-gray-800"
+      >
+        {{ content|safe }}
+      </div>
+    </article>
+
+    <!-- Footer -->
+    <footer
+      class="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] text-center py-6 text-white"
+    >
+      <p class="text-sm">
+        &copy; 2025 Marwari Connect. All rights reserved. |
+        <a
+          href="{{ url_for('terms') }}"
+          class="underline hover:text-[var(--accent)]"
+          >Terms & Conditions</a
+        >
+        |
+        <a
+          href="{{ url_for('privacy') }}"
+          class="underline hover:text-[var(--accent)]"
+          >Privacy Policy</a
+        >
+        |
+        <a
+          href="{{ url_for('blog') }}"
+          class="underline hover:text-[var(--accent)]"
+          >Blog</a
+        >
+      </p>
+    </footer>
+
+    <!-- JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 800, once: true, easing: "ease-in-out" });
+    </script>
+  </body>
+</html>

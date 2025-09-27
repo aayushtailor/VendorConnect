@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Edit Profile — Marwari Connect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root {
+        --primary: #6b3f69;
+        --secondary: #8d5f8c;
+        --accent: #a376a2;
+        --light: #ddc3c3;
+      }
+    </style>
+  </head>
+  <body class="bg-[var(--light)] text-[var(--primary)] min-h-screen">
+    <div class="max-w-3xl mx-auto p-6">
+      <h1 class="text-3xl font-bold mb-6">Edit Profile</h1>
+
+      <form method="POST" enctype="multipart/form-data" class="space-y-4">
+        <input
+          type="text"
+          name="fullname"
+          value="{{ vendor[1] }}"
+          class="input w-full p-2 border rounded"
+          required
+        />
+        <input
+          type="text"
+          name="business"
+          value="{{ vendor[2] }}"
+          class="input w-full p-2 border rounded"
+          required
+        />
+        <input
+          type="text"
+          name="category"
+          value="{{ vendor[3] }}"
+          class="input w-full p-2 border rounded"
+          required
+        />
+        <input
+          type="text"
+          name="city"
+          value="{{ vendor[4] }}"
+          class="input w-full p-2 border rounded"
+          required
+        />
+        <input
+          type="tel"
+          name="phone"
+          value="{{ vendor[5] }}"
+          class="input w-full p-2 border rounded"
+          required
+        />
+        <textarea name="description" class="w-full p-2 border rounded">
+{{ vendor[9] }}</textarea
+        >
+
+        <label class="block mt-4 font-semibold">Business Logo</label>
+        <input
+          type="file"
+          name="business_photo"
+          accept="image/*"
+          class="w-full"
+        />
+        {% if vendor[7] %}
+        <img
+          src="{{ url_for('static', filename='uploads/' ~ vendor[7]) }}"
+          width="100"
+          class="mt-2 rounded border"
+        />
+        {% endif %}
+
+        <label class="block mt-4 font-semibold">Personal Photo</label>
+        <input
+          type="file"
+          name="personal_photo"
+          accept="image/*"
+          class="w-full"
+        />
+        {% if vendor[8] %}
+        <img
+          src="{{ url_for('static', filename='uploads/' ~ vendor[8]) }}"
+          width="100"
+          class="mt-2 rounded border"
+        />
+        {% endif %}
+
+        <button
+          type="submit"
+          class="w-full py-3 mt-4 bg-[var(--primary)] text-white rounded-lg hover:bg-[var(--secondary)]"
+        >
+          Save Changes
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

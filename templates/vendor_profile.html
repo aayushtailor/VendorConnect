@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vendor Profile — Marwari Connect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      :root {
+        --primary: #6b3f69;
+        --secondary: #8d5f8c;
+        --accent: #a376a2;
+        --light: #ddc3c3;
+      }
+    </style>
+  </head>
+  <body class="bg-[var(--light)] text-[var(--primary)]">
+    <!-- Navbar -->
+    <nav
+      class="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] shadow-md"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center gap-2">
+          <img
+            src="{{ url_for('static', filename='logo.png') }}"
+            alt="Logo"
+            class="w-10 h-10 rounded-full"
+          />
+          <span class="font-bold text-lg text-white">Marwari Connect</span>
+        </div>
+        <div class="hidden md:flex items-center gap-6 text-white font-medium">
+          <a href="{{ url_for('home') }}" class="hover:text-[var(--accent)]"
+            >Home</a
+          >
+          <a
+            href="{{ url_for('vendors_list') }}"
+            class="hover:text-[var(--accent)]"
+            >Vendors</a
+          >
+          <a href="{{ url_for('about') }}" class="hover:text-[var(--accent)]"
+            >About</a
+          >
+          <a href="{{ url_for('contact') }}" class="hover:text-[var(--accent)]"
+            >Contact</a
+          >
+          <a href="{{ url_for('blog') }}" class="hover:text-[var(--accent)]"
+            >Blog</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="text-center pt-28 pb-12 px-4">
+      <h1 data-aos="fade-up" class="text-4xl font-extrabold mb-2">
+        {{ vendor[2] or vendor[1] }}
+      </h1>
+      <p
+        data-aos="fade-up"
+        data-aos-delay="200"
+        class="text-sm text-[var(--secondary)]"
+      >
+        {{ vendor[3] }} • {{ vendor[4] }}
+      </p>
+    </header>
+
+    <!-- Vendor Details -->
+    <main class="max-w-5xl mx-auto px-4 pb-16">
+      <a
+        href="{{ url_for('vendors_list') }}"
+        class="inline-block mb-6 text-[var(--accent)] hover:underline"
+      >
+        &larr; Back to directory
+      </a>
+
+      <div
+        id="profileContainer"
+        data-aos="fade-up"
+        class="bg-white p-6 shadow-lg rounded-2xl border border-[var(--secondary)]"
+      >
+        <div class="flex flex-col md:flex-row gap-6 items-start">
+          <!-- Profile Image -->
+          <div
+            class="w-32 h-32 rounded-xl overflow-hidden shadow-md border border-[var(--secondary)]"
+          >
+            <img
+              src="{{ url_for('static', filename='uploads/' ~ vendor[8]) }}"
+              alt="{{ vendor[2] }}"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <!-- Vendor Info -->
+          <div class="flex-1">
+            <h2 class="text-2xl font-bold text-[var(--primary)]">
+              {{ vendor[2] or vendor[1] }}
+            </h2>
+            <p class="text-sm text-gray-600">
+              {{ vendor[3] }} • {{ vendor[4] }}
+            </p>
+            <p class="mt-3 text-gray-700">{{ vendor[10] or '' }}</p>
+
+            <div class="mt-4 flex gap-3">
+              <a
+                href="tel:{{ vendor[5] }}"
+                class="px-4 py-2 bg-[var(--primary)] text-white rounded-full hover:bg-[var(--secondary)] transition"
+              >
+                📞 Call
+              </a>
+              <a
+                href="mailto:{{ vendor[6] }}"
+                class="px-4 py-2 bg-[var(--accent)] text-white rounded-full hover:bg-[var(--secondary)] transition"
+              >
+                ✉️ Email
+              </a>
+            </div>
+
+            {% if vendor[11] %}
+            <p class="mt-2 text-sm text-green-600 font-semibold">
+              ✅ Verified Vendor
+            </p>
+            {% endif %}
+          </div>
+        </div>
+
+        <!-- Photos / Portfolio -->
+        <div
+          data-aos="fade-up"
+          class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4"
+        >
+          <!-- Business Logo -->
+          <img
+            src="{{ url_for('static', filename='uploads/' ~ vendor[8]) }}"
+            alt="{{ vendor[2] }}"
+            class="w-32 h-32 rounded-xl object-cover"
+          />
+
+          <!-- Personal Photo -->
+          <img
+            src="{{ url_for('static', filename='uploads/' ~ vendor[9]) }}"
+            alt="{{ vendor[1] }}"
+            class="w-32 h-32 rounded-xl object-cover"
+          />
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] text-center py-6 text-white"
+    >
+      <p class="text-sm">
+        &copy; 2025 Marwari Connect. All rights reserved. |
+        <a
+          href="{{ url_for('terms') }}"
+          class="underline hover:text-[var(--accent)]"
+          >Terms & Conditions</a
+        >
+        |
+        <a
+          href="{{ url_for('privacy') }}"
+          class="underline hover:text-[var(--accent)]"
+          >Privacy Policy</a
+        >
+      </p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 800, once: true, easing: "ease-in-out" });
+    </script>
+  </body>
+</html>
